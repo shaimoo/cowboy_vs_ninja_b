@@ -11,20 +11,21 @@ namespace ariel{
     private:
         double x,y;
         // set x,y
-        void setx(double x);
-        void sety(double y);
+        void setx(double xpoint);
+        void sety(double ypoint);
 
     public:
         // constructors
-        Point(double x ,double y);
+        Point(double xpoint ,double ypoint);
 
 
-        double  distance(const Point &temp);
+        double  distance(const Point &temp) const;
         void print();
         static Point moveTowards(const Point &source ,const Point &destination ,double dist);
         // get x,y
         double getx();
         double gety();
+        string tostring() const;
         bool operator==(const Point &temp)const;
 
     };

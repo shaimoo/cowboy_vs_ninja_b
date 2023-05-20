@@ -3,25 +3,18 @@
 #include <vector>
 #include "Character.hpp"
 #include "Ninja.hpp"
-#include "Cowboy.hpp"
+#include "Team.hpp"
 
 using  namespace std;
-namespace ariel{
-    class Team2
+namespace ariel
+{
+    class Team2 : public Team
     {
-    private:
-        vector<Ninja*> Ninjas;
-        vector<Cowboy*> Cowboys;
-        Character *lead;
-
     public:
-        explicit Team2(Character *lead);
-        void add(Character *temp );
-        void attack(Team2 *temp );
-        int stillAlive();
-        void print();
+         Team2(Character *lead);
+        void add(Character *temp ) override;
+        ~Team2();
     };
-
 
 }
 

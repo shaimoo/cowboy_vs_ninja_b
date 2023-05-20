@@ -11,29 +11,15 @@ namespace ariel{
         int speed;
 
     public:
-         Ninja(string name,int point_of_life, Point location , int speed): Character(name,point_of_life,location),speed(speed){}
-
+         Ninja(string name,int point_of_life, Point location , int speed): Character(std::move(name),point_of_life,location),speed(speed)
+         {
+             this->set_type("ninja");
+         }
+         void attack(Character* enemy) override;
          virtual void move(Character* enemy);
          virtual void slash(Character* enemy);
-         string print() override;
+         string print() const override;
          int get_speed();
-    };
-    class YoungNinja:public Ninja
-    {
-    public:
-        YoungNinja(string name, Point location);
-    };
-
-    class TrainedNinja:public Ninja
-    {
-    public:
-        TrainedNinja(string name, Point location);
-    };
-
-    class OldNinja:public Ninja
-    {
-    public:
-        OldNinja(string name, Point location);
     };
 
 }

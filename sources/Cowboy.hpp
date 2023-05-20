@@ -12,7 +12,8 @@ namespace ariel{
         Cowboy(string name,Point loctation);
         void reload();
         void shoot(Character *target);
-        string print() override;
+        string print() const override;
+        void attack(Character *enemy) override;
         bool hasboolets();
     };
 }
